@@ -74,7 +74,7 @@ namespace cpputils{
 
     public:
 
-        TerminalTable() = default;
+        TerminalTable();
 
         //添加表头数据
         void addHeadData(const vector <string> &headData);

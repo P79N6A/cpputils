@@ -73,7 +73,7 @@ namespace cpputils {
 
     }
 
-    TerminalTable::TerminalTable() {
+    TerminalTable::TerminalTable(){
         maxColumnNum = 0;
         allTableAllowWidth = 0;
         headerFontColorType = Color::COLOR_YELLOW;

@@ -84,7 +84,7 @@ namespace cpputils{
         transform(locale.begin(), locale.end(), charset.begin(), ::tolower);
 
         RegExp reg("^[a-z][a-z][a-z]?(?:_[A-Z][A-Z])?\\.(.+)");
-        std::vector <std::vector< std::string >> matchAll;
+        std::vector <std::vector< std::string > > matchAll;
         reg.reg_match_all(locale, matchAll);
         if (matchAll.size() > 0){
             std::vector <std::string> matchs = matchAll[0];

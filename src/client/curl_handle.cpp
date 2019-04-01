@@ -14,6 +14,7 @@
 #include "../utils/strutils.h"
 #include "http_client_utils.h"
 #include "../utils/color.h"
+#include "../utils/terminal_table.h"
 
 #define HTTP_CLIENT_BUF_SIZE 1024
 
@@ -61,14 +62,20 @@ namespace cpputils{
         map< string, string >::const_iterator iter;
         string sepline;
         cout << endl;
+
+        TerminalTable t;
+        t.addHeadData(2, "key", "value");
         Color::Green("------------------", 0, 0, sepline);
         string start, end;
         Color::Red(" start print header ", 0, 0, start);
         Color::Red(" end print header ", 0, 0, end);
         cout << sepline << start << sepline << endl;
         for (iter = headers.begin(); iter != headers.end(); iter++){
-            cout << iter->first << ": " << iter->second << endl;
+            t.addRowData(2, iter->first.c_str(), iter->second.c_str());
         }
+        string tstr;
+        t.renderToString(tstr);
+        cout << tstr;
         cout << sepline << end << sepline << endl;
         cout << endl;
     }

@@ -67,12 +67,14 @@ namespace cpputils{
 
 
         void genHeaderStrWidthColor(string &str);
+
         void genBorderStrWidthColor(string &str);
+
         void genRowStrWidthColor(string &str);
 
     public:
 
-        TerminalTable();
+        TerminalTable() = default;
 
         //添加表头数据
         void addHeadData(const vector <string> &headData);

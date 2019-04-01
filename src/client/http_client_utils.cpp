@@ -10,8 +10,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "http_client_utils.h"
-#include "strutils.h"
-#include "some.h"
+#include "../utils/strutils.h"
+#include "../utils/some.h"
 
 using namespace std;
 namespace cpputils {

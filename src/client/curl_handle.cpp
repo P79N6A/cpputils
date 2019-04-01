@@ -9,11 +9,11 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <string.h>
-#include "some.h"
-#include "regexp.h"
-#include "strutils.h"
+#include "../utils/some.h"
+#include "../utils/regexp.h"
+#include "../utils/strutils.h"
 #include "http_client_utils.h"
-#include "color.h"
+#include "../utils/color.h"
 
 #define HTTP_CLIENT_BUF_SIZE 1024
 

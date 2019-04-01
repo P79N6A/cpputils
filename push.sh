@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./cpptest
+cd ./test
 make clean
 cd -
 

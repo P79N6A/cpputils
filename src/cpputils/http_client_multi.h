@@ -1,0 +1,30 @@
+/*************************************************************************
+ * File:	http_client_multi.h
+ * Author:	liuyongshuai<liuyongshuai@hotmail.com>
+ * Time:	2019年03月31日 星期日 22时09分39秒
+ ************************************************************************/
+
+#ifndef _CPPUTILS_HTTP_CLIENT_MULTI_H_
+#define _CPPUTILS_HTTP_CLIENT_MULTI_H_
+
+#include <iostream>
+#include <curl/curl.h>
+#include <vector>
+#include <map>
+#include <stdint.h>
+#include <stddef.h>
+#include <string>
+#include <unistd.h>
+#include <memory.h>
+#include "curl_handle.h"
+
+namespace cpputils {
+    class HttpClientMulti {
+
+    };
+
+
+} //namespacecpputils
+
+
+#endif // _CPPUTILS_HTTP_CLIENT_MULTI_H_

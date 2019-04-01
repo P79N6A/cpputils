@@ -14,6 +14,7 @@
 #include "../src/utils/strutils.h"
 #include "../src/utils/md5.h"
 #include "../src/utils/color.h"
+#include "../src/utils/byte_buffer.h"
 #include "../src/utils/some.h"
 #include "../src/utils/regexp.h"
 #include "../src/utils/rune_utils.h"
@@ -186,9 +187,15 @@ int main(){
     string tmpFilePath = "/Users/liuyongshuai/Documents/service.conf";
     size_t fileSize = cpputils::SomeUtils::fileSize(tmpFilePath);
     cout << "fileSize=" << fileSize << endl;
-    char *tmpFileBuf = (char*)malloc(sizeof(char)*fileSize+1);
-    bzero(tmpFileBuf,sizeof(char)*fileSize+1);
-    cpputils::SomeUtils::getFileContent(tmpFilePath,tmpFileBuf);
+    char *tmpFileBuf = (char *) malloc(sizeof(char) * fileSize + 1);
+    bzero(tmpFileBuf, sizeof(char) * fileSize + 1);
+    cpputils::SomeUtils::getFileContent(tmpFilePath, tmpFileBuf);
     cout << "getFileContent=" << endl;
     //cout << tmpFileBuf << endl;
+
+    cout << "---------byte_buffer---------" << endl;
+    cpputils::ByteBuffer bb;
+    bb.appendInt(12345);
+    int64_t r = bb.toInt64();
+    cout << r << endl;
 };

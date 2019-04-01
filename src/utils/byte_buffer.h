@@ -22,10 +22,21 @@ namespace cpputils{
     class ByteBuffer{
     private:
         vector <uint8_t> data;
-
-        void growth(size_t l);
+        size_t pos;
 
     public:
+        ByteBuffer();
+
+        //前置++
+        ByteBuffer &operator++();
+
+        //后置++
+        ByteBuffer &operator++(int n);
+
+        ByteBuffer &operator+=(size_t n);
+
+        uint8_t &operator[](size_t p);
+
         //添加字节数据
         ByteBuffer &append(void *d, size_t len);
 

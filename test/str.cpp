@@ -196,6 +196,7 @@ int main(){
     cout << "---------byte_buffer---------" << endl;
     cpputils::ByteBuffer bb;
     bb.appendInt(12345);
-    int64_t r = bb.toInt64();
-    cout << r << endl;
+    bb++;
+    cout << "int64_t=" << bb.toInt64() << endl;
+    cout << "uint64_t=" << bb.toUint64() << endl;
 };

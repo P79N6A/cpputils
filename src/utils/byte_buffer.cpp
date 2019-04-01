@@ -10,13 +10,29 @@
 using namespace std;
 
 namespace cpputils{
-    void ByteBuffer::growth(size_t l){
-        if (this->data.size() < l){
-            int i;
-            for (i = 0; i < l; i++){
-                this->data.push_back((uint8_t) '\0');
-            }
-        }
+    ByteBuffer::ByteBuffer(){
+        pos = 0;
+    }
+
+    //前置++
+    ByteBuffer &ByteBuffer::operator++(){
+        ++pos;
+        return *this;
+    }
+
+    //后置++
+    ByteBuffer &ByteBuffer::operator++(int n){
+        pos++;
+        return *this;
+    }
+
+    ByteBuffer &ByteBuffer::operator+=(size_t n){
+        pos += n;
+        return *this;
+    }
+
+    uint8_t &ByteBuffer::operator[](size_t p){
+        return data[p];
     }
 
     //添加字节数据
@@ -119,7 +135,8 @@ namespace cpputils{
         int64_t d = 0;
         int i;
         uint8_t *tmp = (uint8_t * ) & d;
-        for (i = 0; i < data.size() && i < sizeof(int64_t); i++){
+        size_t cpos = pos;
+        for (i = cpos; i < data.size() && i < cpos + sizeof(int64_t); i++){
             *(tmp + i) = data[i];
         }
         return d;
@@ -142,7 +159,14 @@ namespace cpputils{
     }
 
     uint64_t ByteBuffer::toUint64(){
-        return 0;
+        uint64_t d = 0;
+        int i;
+        uint8_t *tmp = (uint8_t * ) & d;
+        size_t cpos = pos;
+        for (i = cpos; i < data.size() && i < cpos + sizeof(uint64_t); i++){
+            *(tmp + i) = data[i];
+        }
+        return d;
     }
 
     size_t ByteBuffer::toSize(){

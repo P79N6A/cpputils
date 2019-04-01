@@ -11,13 +11,13 @@
 #include<stdio.h>
 #include<stdint.h>
 #include<unistd.h>
-#include "../src/cpputils/strutils.h"
-#include "../src/cpputils/md5.h"
-#include "../src/cpputils/color.h"
-#include "../src/cpputils/some.h"
-#include "../src/cpputils/regexp.h"
-#include "../src/cpputils/rune_utils.h"
-#include "../src/cpputils/http_client_utils.h"
+#include "../src/utils/strutils.h"
+#include "../src/utils/md5.h"
+#include "../src/utils/color.h"
+#include "../src/utils/some.h"
+#include "../src/utils/regexp.h"
+#include "../src/utils/rune_utils.h"
+#include "../src/client/http_client_utils.h"
 
 using namespace std;
 

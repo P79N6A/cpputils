@@ -10,9 +10,9 @@
 #include<stdio.h>
 #include<stdint.h>
 #include <curl/curl.h>
-#include "../src/cpputils/http_client_utils.h"
-#include "../src/cpputils/regexp.h"
-#include "../src/cpputils/color.h"
+#include "../src/client/http_client_utils.h"
+#include "../src/utils/regexp.h"
+#include "../src/utils/color.h"
 
 #define CURL_STATICLIB
 using namespace std;

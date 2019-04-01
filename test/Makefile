@@ -13,8 +13,8 @@ utils_objs=${UTILS_DIR}/strutils.o \
            ${UTILS_DIR}/regexp.o \
            ${UTILS_DIR}/terminal_table.o \
 
-client_objs=${UTILS_DIR}/http_client_utils.o \
-            ${UTILS_DIR}/curl_handle.o
+client_objs=${CLIENT_DIR}/http_client_utils.o \
+            ${CLIENT_DIR}/curl_handle.o
 
 all_objs=${utils_objs} ${client_objs}
 

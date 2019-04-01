@@ -1,10 +1,10 @@
 #include<iostream>
 #include<cstring>
-#include "../src/cpputils/strutils.h"
-#include "../src/cpputils/md5.h"
-#include "../src/cpputils/color.h"
-#include "../src/cpputils/some.h"
-#include "../src/cpputils/rune_utils.h"
+#include "../src/utils/strutils.h"
+#include "../src/utils/md5.h"
+#include "../src/utils/color.h"
+#include "../src/utils/some.h"
+#include "../src/utils/rune_utils.h"
 
 using namespace std;
 

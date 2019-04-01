@@ -9,9 +9,9 @@
 #include<string.h>
 #include<stdio.h>
 #include<stdint.h>
-#include "../src/cpputils/terminal_table.h"
-#include "../src/cpputils/regexp.h"
-#include "../src/cpputils/color.h"
+#include "../src/utils/terminal_table.h"
+#include "../src/utils/regexp.h"
+#include "../src/utils/color.h"
 
 using namespace std;
 const char *testForTable[] = {

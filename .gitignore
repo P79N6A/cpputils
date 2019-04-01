@@ -1,4 +1,5 @@
 .idea
+*.txt
 *.iml
 *.o
 *.DSYM
@@ -8,7 +9,7 @@
 _obj
 _test
 *.[568vq]
-[568vq].out
+*.out
 *.cgo1.go
 *.cgo2.c
 _cgo_defun.c

@@ -1,4 +1,6 @@
 /*************************************************************************
+ * 翻译自：https://github.com/mattn/go-runewidth
+ *
  * File:	rune_utils.h
  * Author:	liuyongshuai<liuyongshuai@hotmail.com>
  * Time:	2019年03月21日 星期四 21时21分20秒

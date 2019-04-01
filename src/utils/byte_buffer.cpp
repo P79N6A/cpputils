@@ -116,84 +116,110 @@ namespace cpputils{
 
     //转换方法
     int ByteBuffer::toInt(){
-        return 0;
+        int d = 0;
+        rawData(&d, sizeof(int));
+        return d;
     }
 
     int8_t ByteBuffer::toInt8(){
-        return 0;
+        int8_t d = 0;
+        rawData(&d, sizeof(int8_t));
+        return d;
     }
 
     int16_t ByteBuffer::toInt16(){
-        return 0;
+        int16_t d = 0;
+        rawData(&d, sizeof(int16_t));
+        return d;
     }
 
     int32_t ByteBuffer::toInt32(){
-        return 0;
+        int32_t d = 0;
+        rawData(&d, sizeof(int32_t));
+        return d;
     }
 
     int64_t ByteBuffer::toInt64(){
         int64_t d = 0;
-        int i;
-        uint8_t *tmp = (uint8_t * ) & d;
-        size_t cpos = pos;
-        for (i = cpos; i < data.size() && i < cpos + sizeof(int64_t); i++){
-            *(tmp + i) = data[i];
-        }
+        rawData(&d, sizeof(int64_t));
         return d;
     }
 
     unsigned int ByteBuffer::toUint(){
-        return 0;
+        unsigned int d = 0;
+        rawData(&d, sizeof(unsigned int));
+        return d;
     }
 
     uint8_t ByteBuffer::toUint8(){
-        return 0;
+        uint8_t d = 0;
+        rawData(&d, sizeof(uint8_t));
+        return d;
     }
 
     uint16_t ByteBuffer::toUint16(){
-        return 0;
+        uint16_t d = 0;
+        rawData(&d, sizeof(uint16_t));
+        return d;
     }
 
     uint32_t ByteBuffer::toUint32(){
-        return 0;
+        uint32_t d = 0;
+        rawData(&d, sizeof(uint32_t));
+        return d;
     }
 
     uint64_t ByteBuffer::toUint64(){
         uint64_t d = 0;
-        int i;
-        uint8_t *tmp = (uint8_t * ) & d;
-        size_t cpos = pos;
-        for (i = cpos; i < data.size() && i < cpos + sizeof(uint64_t); i++){
-            *(tmp + i) = data[i];
-        }
+        rawData(&d, sizeof(uint64_t));
         return d;
     }
 
     size_t ByteBuffer::toSize(){
-        return 0;
+        size_t d = 0;
+        rawData(&d, sizeof(size_t));
+        return d;
     }
 
     float ByteBuffer::toFloat(){
-        return 0;
+        float d = 0;
+        rawData(&d, sizeof(float));
+        return d;
     }
 
     double ByteBuffer::toDouble(){
-        return 0;
+        double d = 0;
+        rawData(&d, sizeof(double));
+        return d;
     }
 
     bool ByteBuffer::toBool(){
-        return 0;
+        bool d = false;
+        rawData(&d, sizeof(bool));
+        return d;
     }
 
-    void ByteBuffer::toString(string &s){
-
+    void ByteBuffer::toString(string &s, size_t len){
+        size_t cpos = pos;
+        if (len < 0){
+            len = data.size() - cpos;
+        }
+        int i;
+        for (i = cpos; i < data.size() && i < cpos + len; i++){
+            s.append((char *) &data[i]);
+        }
     }
 
     void ByteBuffer::rawData(void *buf, size_t len){
-
+        int i;
+        uint8_t *tmp = (uint8_t *) buf;
+        size_t cpos = pos;
+        for (i = cpos; i < data.size() && i < cpos + len; i++){
+            *(tmp + i) = data[i];
+        }
     }
 
     size_t ByteBuffer::size(){
-        return 0;
+        return data.size();
     }
 }

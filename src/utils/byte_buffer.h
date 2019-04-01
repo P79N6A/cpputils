@@ -102,7 +102,7 @@ namespace cpputils{
 
         bool toBool();
 
-        void toString(string &s);
+        void toString(string &s, size_t len=-1);
 
         void rawData(void *buf, size_t len);
 

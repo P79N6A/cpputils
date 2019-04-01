@@ -199,4 +199,7 @@ int main(){
     bb++;
     cout << "int64_t=" << bb.toInt64() << endl;
     cout << "uint64_t=" << bb.toUint64() << endl;
+    string dddd;
+    bb.toString(dddd);
+    cout << "toString=" << dddd << endl;
 };

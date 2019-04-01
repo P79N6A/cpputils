@@ -4,8 +4,8 @@
  * Time:	2019年03月21日 星期四 21时21分20秒
  ************************************************************************/
 
-#ifndef _CPPUTILS_RUNE_WIDTH_H_
-#define _CPPUTILS_RUNE_WIDTH_H_
+#ifndef _UTILS_RUNE_WIDTH_H_
+#define _UTILS_RUNE_WIDTH_H_
 
 #include<stdint.h>
 #include<stdarg.h>
@@ -75,4 +75,4 @@ namespace cpputils {
 
 } //namespacecpputils
 
-#endif // _CPPUTILS_RUNE_WIDTH_H_
+#endif // _UTILS_RUNE_WIDTH_H_

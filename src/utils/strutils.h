@@ -4,8 +4,8 @@
  * Time:	2019年03月21日 星期四 16时54分00秒
  ************************************************************************/
 
-#ifndef _CPPUTILS_STRUTILS_H_
-#define _CPPUTILS_STRUTILS_H_
+#ifndef _UTILS_STRUTILS_H_
+#define _UTILS_STRUTILS_H_
 
 #include <string>
 #include <vector>
@@ -78,4 +78,4 @@ namespace cpputils{
         static void trimRightChar(string &str, char c);
     };
 } //namespacecpputils
-#endif //_CPPUTILS_STRUTILS_H_
+#endif //_UTILS_STRUTILS_H_

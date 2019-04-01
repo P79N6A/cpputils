@@ -7,8 +7,8 @@
  * Time:	Fri 22 Mar 2019 03:59:50 PM CST
  ************************************************************************/
 
-#ifndef _CPPUTILS_REGEXP_H_
-#define _CPPUTILS_REGEXP_H_
+#ifndef _UTILS_REGEXP_H_
+#define _UTILS_REGEXP_H_
 
 #include<vector>
 #include<string>

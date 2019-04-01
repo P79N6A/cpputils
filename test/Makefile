@@ -1,7 +1,8 @@
 CC = g++
 CPPFLAGS = -D__STDC_LIMIT_MACROS -m64 -Wno-deprecated -Wall -g -ggdb
 
-UTILS_DIR=./../src/cpputils
+UTILS_DIR=./../src/utils
+CLIENT_DIR=./../src/client
 INC_DIR=-I${UTILS_DIR} -lpcre -lm -lcurl -lpthread
 
 utils_objs=${UTILS_DIR}/strutils.o \
@@ -10,9 +11,12 @@ utils_objs=${UTILS_DIR}/strutils.o \
            ${UTILS_DIR}/some.o \
            ${UTILS_DIR}/color.o \
            ${UTILS_DIR}/regexp.o \
-           ${UTILS_DIR}/http_client_utils.o \
            ${UTILS_DIR}/terminal_table.o \
-           ${UTILS_DIR}/curl_handle.o
+
+client_objs=${UTILS_DIR}/http_client_utils.o \
+            ${UTILS_DIR}/curl_handle.o
+
+all_objs=${utils_objs} ${client_objs}
 
 %.o:%.cpp 
 	$(CC) $(CFLAGS) ${INC_DIR} -c $< -o $@
@@ -43,25 +47,25 @@ all: str.test \
 #2. 如果f是存档文件，那么链接器就尝试匹配U中未解析的符号和由存档文件成员定义的符号。如果某个存档文件成员m，定义了一个符号来解析U中的一个引用，那么将m加入到E中， 并且链接器修改U和D来反映m中的符号定义和引用。对存档文件中所有的成员目标文件反复进行这个过程，直到U和D都不再发生变化。在此时，任何不包含在E中的成员目标文件都被简单丢弃，而链接器将继续处理下一个输入文件；
 #3. 链接器完成对命令行上输入文件的扫描后， U非空的话，那么链接器输出一个错误并终止。否则，它会合并和重定位E中的目标文件，从而构建可执行文件。
 
-str.test: str.o ${utils_objs}
-	${CC} ${utils_objs} -o str.test ${CPPFLAGS} str.cpp ${INC_DIR}
+str.test: str.o ${all_objs}
+	${CC} ${all_objs} -o str.test ${CPPFLAGS} str.cpp ${INC_DIR}
 
-regex.test: regex.o ${utils_objs}
-	${CC} ${utils_objs} -o regex.test ${CPPFLAGS} regex.cpp ${INC_DIR}
+regex.test: regex.o ${all_objs}
+	${CC} ${all_objs} -o regex.test ${CPPFLAGS} regex.cpp ${INC_DIR}
 
-reg_replace_callback.test: reg_replace_callback.o ${utils_objs}
-	${CC} ${utils_objs} -o reg_replace_callback.test ${CPPFLAGS} reg_replace_callback.cpp ${INC_DIR}
+reg_replace_callback.test: reg_replace_callback.o ${all_objs}
+	${CC} ${all_objs} -o reg_replace_callback.test ${CPPFLAGS} reg_replace_callback.cpp ${INC_DIR}
 
-rune.test: rune.o ${utils_objs}
-	${CC} ${utils_objs} -o rune.test ${CPPFLAGS} rune.cpp ${INC_DIR}
+rune.test: rune.o ${all_objs}
+	${CC} ${all_objs} -o rune.test ${CPPFLAGS} rune.cpp ${INC_DIR}
 
-table.test: table.o ${utils_objs}
-	${CC} ${utils_objs} -o table.test ${CPPFLAGS} table.cpp ${INC_DIR}
+table.test: table.o ${all_objs}
+	${CC} ${all_objs} -o table.test ${CPPFLAGS} table.cpp ${INC_DIR}
 
-curl.test: curl.o ${utils_objs}
-	${CC} ${utils_objs} -o curl.test ${CPPFLAGS} curl.cpp ${INC_DIR}
+curl.test: curl.o ${all_objs}
+	${CC} ${all_objs} -o curl.test ${CPPFLAGS} curl.cpp ${INC_DIR}
 
 clean:
-	rm -rf ${utils_objs}
+	rm -rf ${all_objs}
 	rm -rf *.test *.o *.dSYM
 	rm -rf core*

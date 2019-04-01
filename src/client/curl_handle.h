@@ -4,8 +4,8 @@
  * Time:	Sat 30 Mar 2019 04:42:27 PM CST
  ************************************************************************/
 
-#ifndef _CPPUTILS_CURL_HANDLE_H_
-#define _CPPUTILS_CURL_HANDLE_H_
+#ifndef _CLIENT_CURL_HANDLE_H_
+#define _CLIENT_CURL_HANDLE_H_
 
 #include <iostream>
 #include <curl/curl.h>
@@ -147,4 +147,4 @@ namespace cpputils{
     };
 } //namespacecpputils
 
-#endif // _CPPUTILS_CURL_HANDLE_H_
+#endif // _CLIENT_CURL_HANDLE_H_

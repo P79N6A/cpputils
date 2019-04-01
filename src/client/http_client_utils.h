@@ -4,8 +4,8 @@
  * Time:	Tue 26 Mar 2019 01:43:49 PM CST
  ************************************************************************/
 
-#ifndef _CPPUTILS_HTTP_CLIENT_UTILS_H_
-#define _CPPUTILS_HTTP_CLIENT_UTILS_H_
+#ifndef _CLIENT_HTTP_CLIENT_UTILS_H_
+#define _CLIENT_HTTP_CLIENT_UTILS_H_
 
 #include <map>
 #include <curl/curl.h>

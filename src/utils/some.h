@@ -4,8 +4,8 @@
  * Time:	2019年03月21日 星期四 23时28分41秒
  ************************************************************************/
 
-#ifndef _CPPUTILS_SOME_H_
-#define _CPPUTILS_SOME_H_
+#ifndef _UTILS_SOME_H_
+#define _UTILS_SOME_H_
 
 #include <stdint.h>
 #include <vector>
@@ -72,4 +72,4 @@ namespace cpputils{
 
 } //namespacecpputils
 
-#endif // _CPPUTILS_SOME_H_
+#endif // _UTILS_SOME_H_

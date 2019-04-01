@@ -3,8 +3,8 @@
  * Author:	liuyongshuai<liuyongshuai@hotmail.com>
  * Time:	2019-03-21 21:17
  ************************************************************************/
-#ifndef _CPPUTILS_COLOR_H_
-#define _CPPUTILS_COLOR_H_
+#ifndef _UTILS_COLOR_H_
+#define _UTILS_COLOR_H_
 
 #include<string>
 #include<map>
@@ -80,4 +80,4 @@ namespace cpputils {
     };
 
 } //namespacecpputils
-#endif //_CPPUTILS_COLOR_H_
+#endif //_UTILS_COLOR_H_

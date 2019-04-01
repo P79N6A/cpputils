@@ -4,8 +4,8 @@
  * Time:	Fri 22 Mar 2019 05:07:41 PM CST
  ************************************************************************/
 
-#ifndef _CPPUTILS_TERMINAL_TABLE_H_
-#define _CPPUTILS_TERMINAL_TABLE_H_
+#ifndef _UTILS_TERMINAL_TABLE_H_
+#define _UTILS_TERMINAL_TABLE_H_
 
 #include <vector>
 #include <string>

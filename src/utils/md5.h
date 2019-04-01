@@ -4,8 +4,8 @@
  * Time:	2019年03月21日 星期四 23时25分31秒
  ************************************************************************/
 
-#ifndef _CPPUTILS_MD5_H_
-#define _CPPUTILS_MD5_H_
+#ifndef _UTILS_MD5_H_
+#define _UTILS_MD5_H_
 
 #include <string>
 #include <stdint.h>
@@ -47,4 +47,4 @@ namespace cpputils {
     };
 
 } //namespacecpputils
-#endif // _CPPUTILS_MD5_H_
+#endif // _UTILS_MD5_H_
